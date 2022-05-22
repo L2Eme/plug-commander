@@ -1,0 +1,53 @@
+{
+  "name": "@line100/plug-commander",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:L2Eme/plug-commander.git"
+  },
+  "license": "MIT",
+  "version": "0.1.0",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc && tsc -b tsconfig.esm.json"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    },
+    "./configPlug": {
+      "require": "./dist/cjs/configPlug.js",
+      "import": "./dist/esm/configPlug.js"
+    },
+    "./optionPlug": {
+      "require": "./dist/cjs/optionPlug.js",
+      "import": "./dist/esm/optionPlug.js"
+    },
+    "./outputPlug": {
+      "require": "./dist/cjs/outputPlug.js",
+      "import": "./dist/esm/outputPlug.js"
+    }
+  },
+  "dependencies": {
+    "@line100/plug": "1.0.7",
+    "@types/inquirer": "8.2.1",
+    "@types/node": "^17.0.35",
+    "commander": "9.2.0",
+    "inquirer": "8.2.4",
+    "tslib": "^2.3.1"
+  },
+  "files": [
+    "dist/esm/**/*.(js|d.ts)",
+    "dist/cjs/**/*.(js|d.ts)",
+    "src/*.ts",
+    "CHANGELOG.md",
+    "README.md",
+    "package.json",
+    "tsconfig.json",
+    "tsconfig.esm.json"
+  ]
+}
