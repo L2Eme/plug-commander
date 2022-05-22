@@ -9,13 +9,17 @@
     "url": "git@github.com:L2Eme/plug-commander.git"
   },
   "license": "MIT",
-  "version": "0.1.0",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
+  "version": "0.1.1",
   "sideEffects": false,
   "scripts": {
     "build": "tsc && tsc -b tsconfig.esm.json"
+  },
+  "typesVersions": {
+    ">=4.2": {
+      "*": [
+        "./dist/esm/*"
+      ]
+    }
   },
   "exports": {
     ".": {
