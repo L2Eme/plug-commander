@@ -1,6 +1,9 @@
 {
   "name": "@line100/plug-commander",
-  "private": false,
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:L2Eme/plug-commander.git"
