@@ -1,6 +1,8 @@
 import * as plug from '@line100/plug';
 import { Command } from 'commander';
 
+export * from 'commander';
+
 /**
  * SlottedCommand
  */

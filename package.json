@@ -1,6 +1,6 @@
 {
   "name": "@line100/plug-commander",
-  "private": true,
+  "private": false,
   "publishConfig": {
     "access": "public"
   },
@@ -21,6 +21,10 @@
     ".": {
       "require": "./dist/cjs/index.js",
       "import": "./dist/esm/index.js"
+    },
+    "./SlottedCommand": {
+      "require": "./dist/cjs/SlottedCommand.js",
+      "import": "./dist/esm/SlottedCommand.js"
     },
     "./configPlug": {
       "require": "./dist/cjs/configPlug.js",
