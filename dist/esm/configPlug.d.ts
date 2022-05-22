@@ -1,5 +1,9 @@
 import * as plug from '@line100/plug';
 import { Command } from 'commander';
+export interface ParsedConfig {
+    config: (attr: string) => string;
+    alias: (v: string) => string;
+}
 /**
  * parse --config config_file_name
  *
@@ -17,4 +21,4 @@ import { Command } from 'commander';
  * * command.addOption(..env()...default())会覆盖config
  * * 只有--param和config中的value会使用alias替换
  */
-export declare const ConfigPlug: (defaultConfigName: string) => (this: Command, handler: plug.THandler) => (parsed: any) => any;
+export declare const ConfigPlug: (defaultConfigName: string) => (this: Command, handler: plug.THandler) => (parsed: ParsedConfig) => any;

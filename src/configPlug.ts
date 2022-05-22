@@ -5,6 +5,11 @@ import fs from 'fs';
 import { Command, Option } from 'commander';
 import assert from 'assert';
 
+export interface ParsedConfig {
+	config: (attr: string) => string,
+	alias: (v: string) => string,
+}
+
 /**
  * parse --config config_file_name
  * 
@@ -31,7 +36,7 @@ export const ConfigPlug = (defaultConfigName: string) => function (this: Command
 			.default(defaultConfigName)
 	)
 
-	return (parsed: any) => {
+	return (parsed: ParsedConfig) => {
 
 		// 此处是在执行过程中，所以直接使用this上的变量
 		let opts = this.opts();
