@@ -9,7 +9,7 @@
     "url": "git@github.com:L2Eme/plug-commander.git"
   },
   "license": "MIT",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "sideEffects": false,
   "scripts": {
     "build": "tsc && tsc -b tsconfig.esm.json"
