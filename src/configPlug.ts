@@ -6,6 +6,7 @@ import { Command, Option } from 'commander';
 import assert from 'assert';
 
 export interface ParsedConfig {
+	rawConfig: (attr: string) => string,
 	config: (attr: string) => string,
 	alias: (v: string) => string,
 }
@@ -49,6 +50,9 @@ export const ConfigPlug = (defaultConfigName: string) => function (this: Command
 			assert(typeof params === 'object', 'config file params as 1 layer object.')
 			assert(typeof alias === 'object', 'config file alias as 1 layer object.')
 
+			parsed.rawConfig = (attr: string) => {
+				return opts[attr] ?? params[attr];
+			}
 			parsed.config = (attr: string) => {
 				let v = opts[attr] ?? params[attr];
 				return alias[v] ?? v;
